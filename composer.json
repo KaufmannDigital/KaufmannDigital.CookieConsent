@@ -14,8 +14,7 @@
     ],
     "support": {
         "email": "support@kaufmann.digital",
-        "issue"
-        "irc": "irc://irc.freenode.org/composer"
+        "issues": "https://github.com/KaufmannDigital/KaufmannDigital.CookieConsent/issues"
     },
     "require": {
         "neos/neos": ">=3.0",
