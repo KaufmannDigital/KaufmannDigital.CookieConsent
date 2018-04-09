@@ -2,6 +2,21 @@
     "description": "Adds Cookie Consent to your Neos-Site",
     "type": "neos-package",
     "name": "kaufmanndigital/cookieconsent",
+    "license": "MIT",
+    "homepage": "https://www.kaufmann.digital",
+    "authors": [
+        {
+            "name": "Niklas Droste",
+            "email": "support@kaufmann.digital",
+            "homepage": "https://www.kaufmann.digital",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "support@kaufmann.digital",
+        "issue"
+        "irc": "irc://irc.freenode.org/composer"
+    },
     "require": {
         "neos/neos": ">=3.0",
         "kaufmanndigital/neos-base": "*"
