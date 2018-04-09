@@ -1,10 +1,10 @@
-#KaufmannDigital.CookieConsent
-
+KaufmannDigital.CookieConsent
+=============================
 
 A ready-to-run package, that integrates [Cookie Consent](https://cookieconsent.insites.com/) into your [Neos CMS](https://www.neos.io) site.
 
-##Installation
-
+Installation
+------------
 
 The easiest way to install is via composer:
 ```bash
@@ -23,8 +23,8 @@ KaufmannDigital:
 _Congratulations, you added Cookie Consent to your Neos CMS page. That was easy, right?_
 
 
-##Customizing
-###Changing the text
+Changing the text
+-----------------
 
 The content inside Cookie Consent is managed via translations. If you want to change it, copy the `Packages/Application/KaufmannDigital.CookieConsent/Resources/Private/Translations` folder into your Site-Package and add this configuration to `Settings.yaml`:
 ```yaml
@@ -38,7 +38,9 @@ From now, the translation from your package (in this example "Vendor.Package") w
 
 Translations for German and English are provided by this package. We are happy to get translations for your language via Pull-Request.
 
-###Changing layout & colors
+Changing layout & colors
+------------------------
+
 You can also change colors and position. To do so, you have to add this snippet to `Settings.yaml`:
 ```yaml
 KaufmannDigital:
@@ -56,7 +58,9 @@ KaufmannDigital:
 You don't have to override all values. Just pick what you want to change. More configuration-options can be found at [cookieconsent.insites.com](https://cookieconsent.insites.com) 
 
 
-###Compile JS & CSS into your own files
+Compile JS & CSS into your own files
+------------------------------------
+
 If you don't want this Package to include it's on JS and CSS, you can disable it with in `Settings.yaml`:
 ```yaml
 KaufmannDigital:
@@ -67,22 +71,27 @@ KaufmannDigital:
 If you do so, you have to include JS & CSS of Cookie Consent in your files. [Instructions can be found here](https://github.com/insites/cookieconsent/#installation)
 
 
-##FAQs
+FAQs
+----
 * Cookie Consent isn't shown in Backend.
   * It's a feature, not a bug ;-)
 
 
-##Known Bugs
+Known Bugs
+----------
 Known Bugs are submitted as issue. Please have a look at it, before you supply a bug you found.  
 You did a bugfix? Great! Please submit it as PR to share it with other users. 
 
-##Planned Features
+Planned Features
+----------------
 Planned functions are also created as issues and marked as such.  
 You have another idea? Or would you like to help with the implementation? Gladly! Simply create new issues or PRs.
 
-##Maintainer
+Maintainer
+----------
 This package is maintained by [Kaufmann Digital](https://www.kaufmann.digital).  
 Feel free to send us your questions or requests to [support@kaufmann.digital](mailto:support@kaufmann.digital)
 
-##License
+License
+-------
 Licensed under MIT, see [LICENSE](LICENSE)
