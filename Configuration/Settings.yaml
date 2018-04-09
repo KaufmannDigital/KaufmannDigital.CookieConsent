@@ -3,10 +3,15 @@ Neos:
     fusion:
       autoInclude:
         KaufmannDigital.CookieConsent: true
+  Fusion:
+    defaultContext:
+      'LinkBuilder': 'KaufmannDigital\CookieConsent\Eel\Helper\LinkBuildingHelper'
 
 KaufmannDigital:
   CookieConsent:
     enable: true
+    includeJavaScript: true
+    includeCss: true
     policyPageNode: ''
     translations:
       package: 'KaufmannDigital.CookieConsent'
@@ -20,4 +25,3 @@ KaufmannDigital:
       button:
         background: '#f1d600'
         text: '#000'
-

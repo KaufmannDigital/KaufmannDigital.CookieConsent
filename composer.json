@@ -1,9 +1,9 @@
 {
-    "description": "",
+    "description": "Adds Cookie Consent to your Neos-Site",
     "type": "neos-package",
     "name": "kaufmanndigital/cookieconsent",
     "require": {
-        "neos/flow": "*",
+        "neos/neos": ">=3.0",
         "kaufmanndigital/neos-base": "*"
     },
     "autoload": {

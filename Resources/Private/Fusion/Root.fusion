@@ -1,6 +1,10 @@
-prototype(KaufmannDigital.Neos.Base:Page) {
+prototype(Neos.Neos:Page) {
     head.cookieConsent = Neos.Fusion:Template {
         templatePath = 'resource://KaufmannDigital.CookieConsent/Private/Templates/FusionObjects/Initialize.html'
+
+        includeJavaScript = ${Configuration.setting('KaufmannDigital.CookieConsent.includeJavaScript')}
+        includeCss = ${Configuration.setting('KaufmannDigital.CookieConsent.includeCss')}
+
 
         settings = Neos.Fusion:RawArray {
             position = ${Configuration.setting('KaufmannDigital.CookieConsent.position')}

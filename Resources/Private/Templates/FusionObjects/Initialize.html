@@ -1,3 +1,10 @@
+<f:if condition="{includeCss}">
+    <link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Stylesheets/cookieconsent.min.css', package: 'KaufmannDigital.CookieConsent')}" />
+</f:if>
+
+<f:if condition="{includeJavaScript}">
+    <script src="{f:uri.resource(path: 'JavaScript/cookieconsent.min.js', package: 'KaufmannDigital.CookieConsent')}"></script>
+</f:if>
 <script>
     <![CDATA[
     window.addEventListener("load", function(){
