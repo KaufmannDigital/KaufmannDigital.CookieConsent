@@ -17,8 +17,7 @@
         "issues": "https://github.com/KaufmannDigital/KaufmannDigital.CookieConsent/issues"
     },
     "require": {
-        "neos/neos": ">=3.0",
-        "kaufmanndigital/neos-base": "*"
+        "neos/neos": ">=3.0"
     },
     "autoload": {
         "psr-4": {
