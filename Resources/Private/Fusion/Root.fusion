@@ -1,0 +1,23 @@
+prototype(KaufmannDigital.Neos.Base:Page) {
+    head.cookieConsent = Neos.Fusion:Template {
+        templatePath = 'resource://KaufmannDigital.CookieConsent/Private/Templates/FusionObjects/Initialize.html'
+
+        settings = Neos.Fusion:RawArray {
+            position = ${Configuration.setting('KaufmannDigital.CookieConsent.position')}
+            theme = ${Configuration.setting('KaufmannDigital.CookieConsent.theme')}
+            palette = ${Configuration.setting('KaufmannDigital.CookieConsent.palette')}
+            content = Neos.Fusion:RawArray {
+                message = ${Translation.translate('message', null, [], Configuration.setting('KaufmannDigital.CookieConsent.translations.source'), Configuration.setting('KaufmannDigital.CookieConsent.translations.package'))}
+                dismiss = ${Translation.translate('dismiss', null, [], Configuration.setting('KaufmannDigital.CookieConsent.translations.source'), Configuration.setting('KaufmannDigital.CookieConsent.translations.package'))}
+                link = ${Translation.translate('link-text', null, [], Configuration.setting('KaufmannDigital.CookieConsent.translations.source'), Configuration.setting('KaufmannDigital.CookieConsent.translations.package'))}
+
+                href = ${LinkBuilder.fromNodeIdentifier(Configuration.setting('KaufmannDigital.CookieConsent.policyPageNode'))}
+            }
+
+            @process.json = ${Json.stringify(value)}
+        }
+
+        @if.enabled = ${Configuration.setting('KaufmannDigital.CookieConsent.enable') == true}
+        @if.inBackend = ${site.context.inBackend == false}
+    }
+}

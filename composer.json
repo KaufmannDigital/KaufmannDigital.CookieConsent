@@ -1,0 +1,19 @@
+{
+    "description": "",
+    "type": "neos-package",
+    "name": "kaufmanndigital/cookieconsent",
+    "require": {
+        "neos/flow": "*",
+        "kaufmanndigital/neos-base": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "KaufmannDigital\\CookieConsent\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "KaufmannDigital.CookieConsent"
+        }
+    }
+}

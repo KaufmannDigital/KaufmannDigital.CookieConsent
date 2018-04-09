@@ -1,0 +1,23 @@
+Neos:
+  Neos:
+    fusion:
+      autoInclude:
+        KaufmannDigital.CookieConsent: true
+
+KaufmannDigital:
+  CookieConsent:
+    enable: true
+    policyPageNode: ''
+    translations:
+      package: 'KaufmannDigital.CookieConsent'
+      source: 'Main'
+    position: 'bottom'
+    theme: 'block'
+    palette:
+      popup:
+        background: '#000'
+        text: '#fff'
+      button:
+        background: '#f1d600'
+        text: '#000'
+
