@@ -58,6 +58,27 @@ KaufmannDigital:
 You don't have to override all values. Just pick what you want to change. More configuration-options can be found at [cookieconsent.insites.com](https://cookieconsent.insites.com) 
 
 
+Using Opt-In or Opt-Out
+-----------------------
+
+In order to use Opt-In or Opt-Out functionality, you have to activate it in Settings:
+```yaml
+KaufmannDigital:
+  CookieConsent:
+    type: 'opt-in' #Or 'opt-out' (depending on what you want to do)
+``` 
+Afterwards, you can listen to the `kd-cookieconsent` event in JavaScript and en-/disable cookies:
+```javascript
+        document.addEventListener("kd-cookieconsent", function (e) {
+            console.log(e);
+            if (e.detail === 'enable-cookies') {
+                //Enable your cookies here
+            } else if (e.detail === 'disable-cookies') {
+                //Disable your cookies here
+            }
+        });
+```
+
 Compile JS & CSS into your own files
 ------------------------------------
 

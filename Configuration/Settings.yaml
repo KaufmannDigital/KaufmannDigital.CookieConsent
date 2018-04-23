@@ -12,6 +12,7 @@ KaufmannDigital:
     enable: true
     includeJavaScript: true
     includeCss: true
+    type: ''
     policyPageNode: ''
     translations:
       package: 'KaufmannDigital.CookieConsent'

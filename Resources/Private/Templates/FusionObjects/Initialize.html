@@ -7,9 +7,42 @@
 </f:if>
 <script>
     <![CDATA[
+    var settings =]]>{settings -> f:format.raw()}<![CDATA[;
+
+    settings.onInitialise = function () {
+        var type = this.options.type;
+        var didConsent = this.hasConsented();
+        if (type === 'opt-in' && didConsent) {
+            document.dispatchEvent(new CustomEvent("kd-cookieconsent", {detail: "enable-cookies"}));
+        }
+        if (type === 'opt-out' && !didConsent) {
+            document.dispatchEvent(new CustomEvent("kd-cookieconsent", {detail: "disable-cookies"}));
+        }
+    };
+
+    settings.onStatusChange = function () {
+        var type = this.options.type;
+        var didConsent = this.hasConsented();
+        if (type === 'opt-in' && didConsent) {
+            document.dispatchEvent(new CustomEvent("kd-cookieconsent", {detail: "enable-cookies"}));
+        }
+        if (type === 'opt-out' && !didConsent) {
+            document.dispatchEvent(new CustomEvent("kd-cookieconsent", {detail: "disable-cookies"}));
+        }
+    };
+
+    settings.onRevokeChoice = function() {
+        var type = this.options.type;
+        if (type === 'opt-in') {
+            document.dispatchEvent(new CustomEvent("kd-cookieconsent", {detail: "disable-cookies"}));
+        }
+        if (type === 'opt-out') {
+            document.dispatchEvent(new CustomEvent("kd-cookieconsent", {detail: "enable-cookies"}));
+        }
+    };
+
+
     window.addEventListener("load", function(){
-        window.cookieconsent.initialise(
-        ]]>{settings -> f:format.raw()}<![CDATA[
-        )});
+        window.cookieconsent.initialise(settings)});
     ]]>
 </script>

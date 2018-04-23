@@ -7,6 +7,7 @@ prototype(Neos.Neos:Page) {
 
 
         settings = Neos.Fusion:RawArray {
+            type = ${Configuration.setting('KaufmannDigital.CookieConsent.type')}
             position = ${Configuration.setting('KaufmannDigital.CookieConsent.position')}
             theme = ${Configuration.setting('KaufmannDigital.CookieConsent.theme')}
             palette = ${Configuration.setting('KaufmannDigital.CookieConsent.palette')}
