@@ -14,6 +14,8 @@ prototype(Neos.Neos:Page) {
             content = Neos.Fusion:RawArray {
                 message = ${Translation.translate('message', null, [], Configuration.setting('KaufmannDigital.CookieConsent.translations.source'), Configuration.setting('KaufmannDigital.CookieConsent.translations.package'))}
                 dismiss = ${Translation.translate('dismiss', null, [], Configuration.setting('KaufmannDigital.CookieConsent.translations.source'), Configuration.setting('KaufmannDigital.CookieConsent.translations.package'))}
+                allow = ${Translation.translate('allow', null, [], Configuration.setting('KaufmannDigital.CookieConsent.translations.source'), Configuration.setting('KaufmannDigital.CookieConsent.translations.package'))}
+                deny = ${Translation.translate('deny', null, [], Configuration.setting('KaufmannDigital.CookieConsent.translations.source'), Configuration.setting('KaufmannDigital.CookieConsent.translations.package'))}
                 link = ${Translation.translate('link-text', null, [], Configuration.setting('KaufmannDigital.CookieConsent.translations.source'), Configuration.setting('KaufmannDigital.CookieConsent.translations.package'))}
 
                 href = ${LinkBuilder.fromNodeIdentifier(Configuration.setting('KaufmannDigital.CookieConsent.policyPageNode'))}

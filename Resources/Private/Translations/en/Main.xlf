@@ -8,6 +8,12 @@
             <trans-unit id="dismiss">
                 <source>Got it!</source>
             </trans-unit>
+            <trans-unit id="allow">
+                <source>Allow cookies</source>
+            </trans-unit>
+            <trans-unit id="deny">
+                <source>Decline</source>
+            </trans-unit>
             <trans-unit id="link-text">
                 <source>Learn more</source>
             </trans-unit>
