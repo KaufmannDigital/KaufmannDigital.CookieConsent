@@ -67,7 +67,7 @@ KaufmannDigital:
   CookieConsent:
     type: 'opt-in' #Or 'opt-out' (depending on what you want to do)
 ``` 
-Afterwards, you can listen to the `kd-cookieconsent` event in JavaScript and en-/disable cookies:
+Afterwards, you can listen to the `kd-cookieconsent` event in JavaScript to en-/disable cookies:
 ```javascript
 document.addEventListener("kd-cookieconsent", function (e) {
     if (e.detail === 'enable-cookies') {
