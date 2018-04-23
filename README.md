@@ -70,7 +70,6 @@ KaufmannDigital:
 Afterwards, you can listen to the `kd-cookieconsent` event in JavaScript and en-/disable cookies:
 ```javascript
 document.addEventListener("kd-cookieconsent", function (e) {
-    console.log(e);
     if (e.detail === 'enable-cookies') {
         //Enable your cookies here
     } else if (e.detail === 'disable-cookies') {
