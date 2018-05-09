@@ -72,10 +72,12 @@ Afterwards, you can listen to the `kd-cookieconsent` event in JavaScript to en-/
 document.addEventListener("kd-cookieconsent", function (e) {
     if (e.detail === 'enable-cookies') {
         //Enable your cookies here
-        //For Google Analytics: window['ga-disable-UA-<YOUR-SITE-CODE>'] = false;
+        //For Google Analytics: 
+        window['ga-disable-UA-<YOUR-SITE-CODE>'] = false;
     } else if (e.detail === 'disable-cookies') {
         //Disable your cookies here
-        //For Google Analytics: window['ga-disable-UA-<YOUR-SITE-CODE>'] = true;
+        //For Google Analytics: 
+        window['ga-disable-UA-<YOUR-SITE-CODE>'] = true;
     }
 });
 ```
