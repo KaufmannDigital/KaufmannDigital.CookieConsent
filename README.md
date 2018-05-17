@@ -85,7 +85,7 @@ document.addEventListener("kd-cookieconsent", function (e) {
 Compile JS & CSS into your own files
 ------------------------------------
 
-If you don't want this Package to include it's on JS and CSS, you can disable it with in `Settings.yaml`:
+If you don't want this Package to include it's own JS and CSS, you can disable it with in `Settings.yaml`:
 ```yaml
 KaufmannDigital:
   CookieConsent:
