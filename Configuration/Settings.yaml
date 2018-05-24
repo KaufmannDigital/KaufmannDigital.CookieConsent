@@ -18,6 +18,7 @@ KaufmannDigital:
       package: 'KaufmannDigital.CookieConsent'
       source: 'Main'
     position: 'bottom'
+    static: false
     theme: 'block'
     palette:
       popup:
