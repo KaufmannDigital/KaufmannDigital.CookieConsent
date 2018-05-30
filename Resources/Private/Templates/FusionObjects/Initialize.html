@@ -6,7 +6,20 @@
     <script src="{f:uri.resource(path: 'JavaScript/cookieconsent.min.js', package: 'KaufmannDigital.CookieConsent')}"></script>
 </f:if>
 <script>
+
     <![CDATA[
+
+    function logChoice(status) {
+        var request = new XMLHttpRequest();
+        request.open('POST', '/cc/log');
+        request.setRequestHeader("Content-Type", "application/json");
+        request.send(JSON.stringify({
+            cookieExpiryTimestamp: Math.floor(Date.now() /1000) + (365 * 24 * 60 * 60),
+            choice: status
+        }));
+
+    }
+
     var settings =]]>{settings -> f:format.raw()}<![CDATA[;
 
     settings.onInitialise = function (status) {
@@ -31,9 +44,14 @@
             } else {
                 document.dispatchEvent(new CustomEvent("kd-cookieconsent", {detail: "disable-cookies"}));
             }
+
+            logChoice(status);
+
         }
         if (type === 'opt-out' && !didConsent) {
             document.dispatchEvent(new CustomEvent("kd-cookieconsent", {detail: "disable-cookies"}));
+            logChoice(status);
+
         }
     };
 
@@ -49,6 +67,8 @@
 
 
     window.addEventListener("load", function(){
-        window.cookieconsent.initialise(settings)});
+        window.cookieconsent.initialise(settings);
+    });
+
     ]]>
 </script>

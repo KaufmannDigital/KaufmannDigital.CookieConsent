@@ -1,0 +1,7 @@
+-
+  name: 'CookieConsent Logging'
+  uriPattern: 'cc/log'
+  defaults:
+    '@package': 'KaufmannDigital.CookieConsent'
+    '@controller': 'Logging'
+    '@action': 'log'

@@ -6,6 +6,10 @@ Neos:
   Fusion:
     defaultContext:
       'LinkBuilder': 'KaufmannDigital\CookieConsent\Eel\Helper\LinkBuildingHelper'
+  Flow:
+    mvc:
+      routes:
+        'KaufmannDigital.CookieConsent': true
 
 KaufmannDigital:
   CookieConsent:
