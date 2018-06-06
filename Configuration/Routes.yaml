@@ -1,5 +1,6 @@
 -
   name: 'CookieConsent Logging'
+  httpMethods: [POST]
   uriPattern: 'cc/log'
   defaults:
     '@package': 'KaufmannDigital.CookieConsent'
