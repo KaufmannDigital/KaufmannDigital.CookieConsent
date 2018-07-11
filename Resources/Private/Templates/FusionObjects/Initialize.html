@@ -11,6 +11,7 @@
 
     settings.onInitialise = function (status) {
         var type = this.options.type;
+        var didConsent = this.hasConsented();
         if (type === 'opt-in') {
             if (status === 'allow') {
                 document.dispatchEvent(new CustomEvent("kd-cookieconsent", {detail: "enable-cookies"}));
@@ -25,6 +26,7 @@
 
     settings.onStatusChange = function (status) {
         var type = this.options.type;
+        var didConsent = this.hasConsented();
         if (type === 'opt-in') {
             if (status === 'allow') {
                 document.dispatchEvent(new CustomEvent("kd-cookieconsent", {detail: "enable-cookies"}));
