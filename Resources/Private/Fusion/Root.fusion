@@ -19,7 +19,12 @@ prototype(Neos.Neos:Page) {
                 deny = ${Translation.translate('deny', null, [], Configuration.setting('KaufmannDigital.CookieConsent.translations.source'), Configuration.setting('KaufmannDigital.CookieConsent.translations.package'))}
                 link = ${Translation.translate('link-text', null, [], Configuration.setting('KaufmannDigital.CookieConsent.translations.source'), Configuration.setting('KaufmannDigital.CookieConsent.translations.package'))}
 
-                href = ${LinkBuilder.fromNodeIdentifier(Configuration.setting('KaufmannDigital.CookieConsent.policyPageNode'))}
+                href = NodeUri {
+                    node = ${q(site).find('#' + Configuration.setting('KaufmannDigital.CookieConsent.policyPageNode')).get(0)}
+                    absolute = true
+
+                    @if.isset = ${String.isBlank(Configuration.setting('KaufmannDigital.CookieConsent.policyPageNode')) == false}
+                }
             }
 
             @process.json = ${Json.stringify(value)}
