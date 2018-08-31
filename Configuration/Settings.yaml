@@ -3,9 +3,6 @@ Neos:
     fusion:
       autoInclude:
         KaufmannDigital.CookieConsent: true
-  Fusion:
-    defaultContext:
-      'LinkBuilder': 'KaufmannDigital\CookieConsent\Eel\Helper\LinkBuildingHelper'
 
 KaufmannDigital:
   CookieConsent:
