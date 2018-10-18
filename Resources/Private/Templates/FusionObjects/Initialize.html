@@ -9,47 +9,48 @@
     <![CDATA[
     var settings =]]>{settings -> f:format.raw()}<![CDATA[;
 
+    var enableEvent = document.createEvent("CustomEvent");
+    enableEvent.initCustomEvent('kd-cookieconsent', false, false, "enable-cookies");
+    var disableEvent = document.createEvent("CustomEvent");
+    disableEvent.initCustomEvent('kd-cookieconsent', false, false, "disable-cookies");
+
     settings.onInitialise = function (status) {
         var type = this.options.type;
         var didConsent = this.hasConsented();
         if (type === 'opt-in') {
             if (status === 'allow') {
-                document.dispatchEvent(new CustomEvent("kd-cookieconsent", {detail: "enable-cookies"}));
+                document.dispatchEvent(enableEvent);
             } else {
-                document.dispatchEvent(new CustomEvent("kd-cookieconsent", {detail: "disable-cookies"}));
+                document.dispatchEvent(disableEvent);
             }
         }
         if (type === 'opt-out' && !didConsent) {
-            document.dispatchEvent(new CustomEvent("kd-cookieconsent", {detail: "disable-cookies"}));
+            document.dispatchEvent(disableEvent);
         }
     };
-
     settings.onStatusChange = function (status) {
         var type = this.options.type;
         var didConsent = this.hasConsented();
         if (type === 'opt-in') {
             if (status === 'allow') {
-                document.dispatchEvent(new CustomEvent("kd-cookieconsent", {detail: "enable-cookies"}));
+                document.dispatchEvent(enableEvent);
             } else {
-                document.dispatchEvent(new CustomEvent("kd-cookieconsent", {detail: "disable-cookies"}));
+                document.dispatchEvent(disableEvent);
             }
         }
         if (type === 'opt-out' && !didConsent) {
-            document.dispatchEvent(new CustomEvent("kd-cookieconsent", {detail: "disable-cookies"}));
+            document.dispatchEvent(disableEvent);
         }
     };
-
     settings.onRevokeChoice = function() {
         var type = this.options.type;
         if (type === 'opt-in') {
-            document.dispatchEvent(new CustomEvent("kd-cookieconsent", {detail: "disable-cookies"}));
+            document.dispatchEvent(disableEvent);
         }
         if (type === 'opt-out') {
-            document.dispatchEvent(new CustomEvent("kd-cookieconsent", {detail: "enable-cookies"}));
+            document.dispatchEvent(enableEvent);
         }
     };
-
-
     window.addEventListener("load", function(){
         window.cookieconsent.initialise(settings)});
     ]]>
