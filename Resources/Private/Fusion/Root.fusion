@@ -20,10 +20,20 @@ prototype(Neos.Neos:Page) {
                 link = ${Translation.translate('link-text', null, [], Configuration.setting('KaufmannDigital.CookieConsent.translations.source'), Configuration.setting('KaufmannDigital.CookieConsent.translations.package'))}
 
                 href = Neos.Neos:NodeUri {
-                    node = ${q(site).find('#' + Configuration.setting('KaufmannDigital.CookieConsent.policyPageNode')).get(0)}
-                    absolute = true
+                    node = Neos.Fusion:Case {
+                        policyPageNodes {
+                            condition = ${String.isBlank(Configuration.setting('KaufmannDigital.CookieConsent.policyPageNodes.' + site.name)) == false}
+                            renderer = ${q(site).find('#' + Configuration.setting('KaufmannDigital.CookieConsent.policyPageNodes.' + site.name)).get(0)}
+                        }
 
-                    @if.isset = ${String.isBlank(Configuration.setting('KaufmannDigital.CookieConsent.policyPageNode')) == false}
+                        globalConfiguration {
+                            condition = true
+                            renderer = ${q(site).find('#' + Configuration.setting('KaufmannDigital.CookieConsent.policyPageNode')).get(0)}
+                        }
+                    }
+
+
+                    absolute = true
                 }
             }
 

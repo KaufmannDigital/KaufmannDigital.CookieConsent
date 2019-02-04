@@ -17,7 +17,14 @@ To configure the policy-link, you can use this snippet in your Settings.yaml`:
 ```yaml
 KaufmannDigital:
   CookieConsent:
-    policyPageNode: 'c7a91aa8-fbac-4c24-8326-102eb7307180' #Identifier of documentNode you want to link.
+    #Global configuration of PolicyPage
+    policyPageNode: 'c7a91aa8-fbac-4c24-8326-102eb7307180' #UUID of global page you want to link
+
+    #Configuration per site for multisite installations
+    #Replace site1/site2 with your sitename (/sites/sitename/node-a2ufd/.../)
+    policyPageNodes:
+      site1: 'c7a91aa8-fbac-4c24-8326-102eb7307180' #UUID of policy-page for /sites/site1
+      site2: '454d85b6-289b-11e9-b210-d663bd873d93' #UUID of policy-page for /sites/site2
 ```
 
 _Congratulations, you added Cookie Consent to your Neos CMS page. That was easy, right?_
