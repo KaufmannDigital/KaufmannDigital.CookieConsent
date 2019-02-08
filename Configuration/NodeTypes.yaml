@@ -1,0 +1,11 @@
+'KaufmannDigital.CookieConsent:PolicyPageMixin':
+  abstract: true
+  properties:
+    policyPage:
+      type: reference
+      ui:
+        label: i18n
+        reloadIfChanged: true
+        inspector:
+          group: document
+          position: 'after uriPathSegment'
