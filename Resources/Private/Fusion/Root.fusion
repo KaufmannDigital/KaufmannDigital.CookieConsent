@@ -21,6 +21,11 @@ prototype(Neos.Neos:Page) {
 
                 href = Neos.Neos:NodeUri {
                     node = Neos.Fusion:Case {
+                        policyPageProperty {
+                            condition = ${q(site).property('policyPage')}
+                            renderer = ${q(site).property('policyPage')}
+                        }
+
                         policyPageNodes {
                             condition = ${String.isBlank(Configuration.setting('KaufmannDigital.CookieConsent.policyPageNodes.' + site.name)) == false}
                             renderer = ${q(site).find('#' + Configuration.setting('KaufmannDigital.CookieConsent.policyPageNodes.' + site.name)).get(0)}
@@ -41,6 +46,6 @@ prototype(Neos.Neos:Page) {
         }
 
         @if.enabled = ${Configuration.setting('KaufmannDigital.CookieConsent.enable') == true}
-        @if.inBackend = ${site.context.inBackend == false}
+        @if.notInBackend = ${site.context.inBackend == false}
     }
 }
