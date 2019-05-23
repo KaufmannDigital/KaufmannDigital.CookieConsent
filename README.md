@@ -25,7 +25,7 @@ To configure the policy-link, you have the following two options:
         'KaufmannDigital.CookieConsent:PolicyPageMixin': true
         ...
   ```
-  
+
   After that, simply select the policy page in your Neos backend.
 
 * Or use this snippet in your `Settings.yaml`:
@@ -73,6 +73,7 @@ KaufmannDigital:
   CookieConsent:
     position: 'bottom' # bottom, bottom-left, bottom-right, top, top-left or top-right
     theme: 'block' # block, classic, or edgeless
+    layout: 'basic' # basic, basic-close or basic-header
     palette:
       popup:
         background: '#000' #like in css
