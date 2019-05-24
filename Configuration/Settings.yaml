@@ -26,6 +26,7 @@ KaufmannDigital:
     position: 'bottom'
     static: false
     theme: 'block'
+    layout: 'basic'
     palette:
       popup:
         background: '#000'

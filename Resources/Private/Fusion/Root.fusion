@@ -11,11 +11,13 @@ prototype(Neos.Neos:Page) {
             position = ${Configuration.setting('KaufmannDigital.CookieConsent.position')}
             static = ${Configuration.setting('KaufmannDigital.CookieConsent.static')}
             theme = ${Configuration.setting('KaufmannDigital.CookieConsent.theme')}
+            layout = ${Configuration.setting('KaufmannDigital.CookieConsent.layout')}
             palette = ${Configuration.setting('KaufmannDigital.CookieConsent.palette')}
             elements = ${Configuration.setting('KaufmannDigital.CookieConsent.elements')}
             compliance = ${Configuration.setting('KaufmannDigital.CookieConsent.compliance')}
             cookie = ${Configuration.setting('KaufmannDigital.CookieConsent.cookie')}
             content = Neos.Fusion:RawArray {
+                header = ${Translation.translate('header', null, [], Configuration.setting('KaufmannDigital.CookieConsent.translations.source'), Configuration.setting('KaufmannDigital.CookieConsent.translations.package'))}
                 message = ${Translation.translate('message', null, [], Configuration.setting('KaufmannDigital.CookieConsent.translations.source'), Configuration.setting('KaufmannDigital.CookieConsent.translations.package'))}
                 dismiss = ${Translation.translate('dismiss', null, [], Configuration.setting('KaufmannDigital.CookieConsent.translations.source'), Configuration.setting('KaufmannDigital.CookieConsent.translations.package'))}
                 allow = ${Translation.translate('allow', null, [], Configuration.setting('KaufmannDigital.CookieConsent.translations.source'), Configuration.setting('KaufmannDigital.CookieConsent.translations.package'))}
