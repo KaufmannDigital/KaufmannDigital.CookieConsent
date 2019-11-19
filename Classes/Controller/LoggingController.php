@@ -28,18 +28,17 @@ class LoggingController extends RestController {
         $cookieExpiry = new \DateTime();
         $cookieExpiry->setTimestamp($cookieExpiryTimestamp);
 
-
         $log = new Log();
         $log->setDate(new \DateTime());
         $log->setChoice($choice);
         $log->setCookieExpiry($cookieExpiry);
-        $log->setIpAddress($this->request->getHttpRequest()->getClientIpAddress());
+        $log->setIpAddress($this->request->getHttpRequest()->getAttribute('clientIpAddress'));
 
         try {
             $this->logRepository->add($log);
-            $this->response->setStatus(201, 'Log created successfully');
+            $this->response->setStatusCode(201);
         } catch (\Exception $e) {
-            $this->response->setStatus(400, 'Log could not be created');
+            $this->response->setStatusCode(400);
         }
 
     }
