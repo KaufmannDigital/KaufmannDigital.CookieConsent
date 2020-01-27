@@ -3,6 +3,11 @@ Neos:
     fusion:
       autoInclude:
         KaufmannDigital.CookieConsent: true
+    userInterface:
+      translation:
+        autoInclude:
+          'KaufmannDigital.CookieConsent':
+            - 'NodeTypes/*'
 
 KaufmannDigital:
   CookieConsent:
