@@ -1,7 +1,11 @@
 KaufmannDigital.CookieConsent
 =============================
 
-A ready-to-run package, that integrates [Cookie Consent](https://cookieconsent.insites.com/) into your [Neos CMS](https://www.neos.io) site.
+A ready-to-run package, that integrates [Cookie Consent](https://cookieconsent.insites.com/) into your [Neos CMS](https://www.neos.io) site.  
+
+We have created a new package with many more functions, inline maintenance and even easier configuration. 🎉  
+Have a look at [KaufmannDigital.GDPR.CookieConsent](https://github.com/KaufmannDigital/KaufmannDigital.CookieConsent).
+
 
 Installation
 ------------
