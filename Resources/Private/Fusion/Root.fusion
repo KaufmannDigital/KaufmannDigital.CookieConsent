@@ -23,7 +23,7 @@ prototype(Neos.Neos:Page) {
                 allow = ${Translation.translate('allow', null, [], Configuration.setting('KaufmannDigital.CookieConsent.translations.source'), Configuration.setting('KaufmannDigital.CookieConsent.translations.package'))}
                 deny = ${Translation.translate('deny', null, [], Configuration.setting('KaufmannDigital.CookieConsent.translations.source'), Configuration.setting('KaufmannDigital.CookieConsent.translations.package'))}
                 link = ${Translation.translate('link-text', null, [], Configuration.setting('KaufmannDigital.CookieConsent.translations.source'), Configuration.setting('KaufmannDigital.CookieConsent.translations.package'))}
-                policy = ${Translation.translate('policy-link', null, [], Configuration.setting('KaufmannDigital.CookieConsent.translations.source'), Configuration.setting('KaufmannDigital.CookieConsent.translations.package'))}
+                policy = ${Translation.translate('policy-link', null, [], Configuration.setting('KaufmannDigital.CookieConsent.translations.source'), Configuration.setting('KaufmannDigital.CookieConsent.translations.package')) || 'Cookie Policy'}
 
                 href = Neos.Neos:NodeUri {
                     node = Neos.Fusion:Case {
