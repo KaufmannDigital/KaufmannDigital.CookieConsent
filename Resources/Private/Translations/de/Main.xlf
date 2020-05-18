@@ -20,6 +20,9 @@
             <trans-unit id="link-text">
                 <source>Datenschutzerklärung</source>
             </trans-unit>
+            <trans-unit id="policy-link">
+                <source>Cookie Einstellungen</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

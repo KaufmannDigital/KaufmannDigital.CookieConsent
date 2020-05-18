@@ -20,6 +20,9 @@
             <trans-unit id="link-text">
                 <source>Learn more</source>
             </trans-unit>
+            <trans-unit id="policy-link">
+                <source>Cookie Policy</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
